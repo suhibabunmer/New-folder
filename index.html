@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة الأولى</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>الصفحة الأولى</h1>
+        <form id="dataForm">
+            <label for="field1">الخانة 1:</label>
+            <input type="text" id="field1" name="field1">
+            <label for="field2">الخانة 2:</label>
+            <input type="text" id="field2" name="field2">
+            <label for="field3">الخانة 3:</label>
+            <input type="text" id="field3" name="field3">
+            <label for="field4">الخانة 4:</label>
+            <input type="text" id="field4" name="field4">
+            <label for="field5">الخانة 5:</label>
+            <input type="text" id="field5" name="field5">
+            <button type="button" onclick="sendData()">إرسال</button>
+        </form>
+    </div>
+    <script>
+        function sendData() {
+            const field1 = document.getElementById('field1').value;
+            const field2 = document.getElementById('field2').value;
+            const field3 = document.getElementById('field3').value;
+            const field4 = document.getElementById('field4').value;
+            const field5 = document.getElementById('field5').value;
+
+            const data = {
+                field1: field1,
+                field2: field2,
+                field3: field3,
+                field4: field4,
+                field5: field5
+            };
+
+            const queryString = new URLSearchParams(data).toString();
+            window.location.href = page2.html?${queryString};
+        }
+    </script>
+</body>
+</html>
